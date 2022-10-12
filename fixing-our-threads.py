@@ -10,6 +10,7 @@ def thread_function(name, message):
     # make sure the file exists before attempting to read
     if os.path.exists('names.txt'):
         with open("names.txt", 'r+') as namesfile:
+            # print the file before writing a message
             print(namesfile.read())
     else:
         print("The file does not exist.")
@@ -21,7 +22,7 @@ def thread_function(name, message):
 
 def sleep_function(name):
     time.sleep(5)
-    print(f"Thread {name} is done")
+    print(f'{time.strftime("%H:%M:%S", time.localtime())}: Thread {name} is done')
 
 
 if __name__ == "__main__":
